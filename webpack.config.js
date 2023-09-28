@@ -1,13 +1,12 @@
-const path = require('path');
-
 module.exports = {
+  mode: "development",
   entry: "./index.tsx",
   output: {
     filename: 'output.js',
   },
   resolveLoader: {
     alias: {
-      'my-own-loader': path.resolve(__dirname, "my-own-loader.js"),
+      'my-own-loader': "./my-own-loader.js",
     },
   },
   module: {
@@ -28,7 +27,6 @@ module.exports = {
           appendTsSuffixTo: [/\.api$/]
         }
       }
-
     ]
   },
 };
